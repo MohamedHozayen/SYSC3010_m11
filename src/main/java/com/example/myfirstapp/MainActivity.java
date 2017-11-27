@@ -3,7 +3,6 @@ package com.example.myfirstapp;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -13,14 +12,10 @@ import com.google.gson.GsonBuilder;
 
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
-import java.net.InetAddress;
 
 public class MainActivity extends AppCompatActivity {
     public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
 
-    String udpOutputData;
-    boolean sendUdp = true;
-    int counter = 0;
 
     private Receiver receiver = null;
     private int port = 8080;
@@ -58,6 +53,11 @@ public class MainActivity extends AppCompatActivity {
 
 
         public void run() {
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             // Open DGram socket
 
             try {
@@ -67,24 +67,10 @@ public class MainActivity extends AppCompatActivity {
                 while(running) {
                     socket.receive(packet);
 
-                    // parse JSON
+                    // parse JSON and put the values in an instance of Metrics class which has rpm, charge, temp fields
                     String received = new String(packet.getData());
                     metrics = gson.fromJson(received, Metrics.class);
                     runOnUiThread(updateUi);
-
-
-                    //<editor-fold desc="placeholder for loop was here">
-                    while (count < 500) {
-                        count++;
-                        textState = ((Integer) count).toString();
-                        try {
-                            Thread.sleep(1000);
-                        } catch (InterruptedException e1) {
-                            e1.printStackTrace();
-                        }
-                        runOnUiThread(updateUi); // from parsed JSON
-                    }
-                    //</editor-fold>
 
                     if (socket != null) {
                         socket.close();
@@ -112,11 +98,11 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    //a runnable interface to set parsed values in UI
     private Runnable updateUi = new Runnable() {
         public void run() {
             if (receiver == null) return;
             TextView textView = (TextView) findViewById(R.id.rpmValView);
-//            textView.setText(receiver.getTextState());
             textView.setText(receiver.getRpm());
 
             textView = (TextView) findViewById(R.id.chargeValView);
@@ -141,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
-
+    //initializes metrics fields in UI to zero. Called from onCreate()
     public void updateVals() {
         TextView rpmVal = (TextView) findViewById(R.id.rpmValView);
         rpmVal.setText("0");

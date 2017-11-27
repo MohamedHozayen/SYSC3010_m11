@@ -18,7 +18,10 @@ import com.google.gson.GsonBuilder;
 import java.util.Arrays;
 import java.util.List;
 
-
+/**
+ * Created by Vadim Yastrebov (CFD2) on 12/11/17.
+ * Version 1.2
+ */
 
 public class DisplayMessageActivity extends AppCompatActivity {
     private RequestQueue requestQueue;
@@ -94,7 +97,7 @@ public class DisplayMessageActivity extends AppCompatActivity {
         @Override
         public void onErrorResponse(VolleyError error) {    //if error occurred, it will be logged
             Log.e("Metrics", error.toString());
-            //TODO error messages in UI
+            //TODO error messages in UI for failed request
         }
     };
 
