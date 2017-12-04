@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.myfirstapp.MainActivity"
+    tools:context="com.project.birdalert.MainActivity"
     tools:layout_editor_absoluteY="81dp"
     tools:layout_editor_absoluteX="0dp">
 
@@ -12,16 +12,15 @@
         android:id="@+id/editText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="@string/edit_message"
         android:inputType="textPersonName"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button"
@@ -38,23 +37,23 @@
         app:layout_constraintRight_toRightOf="parent" />
 
     <TextView
-        android:id="@+id/rpmView"
+        android:id="@+id/flowSpeedView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
-        android:text="RPM:"
-        app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginTop="32dp"
+        android:text="Flow Speed:"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText" />
 
     <TextView
-        android:id="@+id/rpmValView"
+        android:id="@+id/flowSpeedValView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="32dp"
-        android:text="TextView"
-        app:layout_constraintLeft_toRightOf="@+id/rpmView"
+        android:text="Text View"
+        app:layout_constraintLeft_toRightOf="@+id/flowSpeedView"
         app:layout_constraintTop_toBottomOf="@+id/editText" />
 
     <TextView
@@ -65,7 +64,7 @@
         android:layout_marginTop="16dp"
         android:text="Temp:"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rpmView" />
+        app:layout_constraintTop_toBottomOf="@+id/flowSpeedView" />
 
     <TextView
         android:id="@+id/tempValView"
@@ -75,23 +74,22 @@
         app:layout_constraintLeft_toRightOf="@+id/tempView"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@+id/rpmValView" />
+        app:layout_constraintTop_toBottomOf="@+id/flowSpeedValView" />
 
     <TextView
-        android:id="@+id/chargeView"
+        android:id="@+id/flowMLView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
-        android:layout_marginRight="0dp"
-        android:text="Charge:"
-        app:layout_constraintHorizontal_bias="0.33"
-        app:layout_constraintLeft_toRightOf="@+id/rpmValView"
-        app:layout_constraintRight_toLeftOf="@+id/chargeValView"
         android:layout_marginTop="32dp"
+        android:text="Flow Speed:"
+        app:layout_constraintHorizontal_bias="0.33"
+        app:layout_constraintLeft_toRightOf="@+id/flowSpeedValView"
+        app:layout_constraintRight_toLeftOf="@+id/flowMLValView"
         app:layout_constraintTop_toBottomOf="@+id/editText" />
 
     <TextView
-        android:id="@+id/chargeValView"
+        android:id="@+id/flowMLValView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
@@ -99,5 +97,16 @@
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginTop="32dp"
         app:layout_constraintTop_toBottomOf="@+id/button" />
+
+    <TextView
+        android:id="@+id/birdSensedView"
+        android:layout_width="150dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="32dp"
+        android:text="Bird Sensed!"
+        android:textSize="24sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="280dp" />
 
 </android.support.constraint.ConstraintLayout>
