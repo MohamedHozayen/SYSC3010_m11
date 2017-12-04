@@ -20,7 +20,8 @@
         app:layout_constraintEnd_toStartOf="@+id/button"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="16dp" />
 
     <Button
         android:id="@+id/button"
@@ -107,6 +108,7 @@
         android:textSize="24sp"
         android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="280dp" />
+        tools:layout_editor_absoluteY="280dp"
+        android:layout_marginLeft="32dp" />
 
 </android.support.constraint.ConstraintLayout>

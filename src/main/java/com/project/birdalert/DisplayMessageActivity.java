@@ -10,6 +10,10 @@ import android.widget.TextView;
  * Version 1.2
  */
 
+/**
+ * this class was meant to do get http request to receive measurements for a date. it is unimplemented on the server
+ * that is why it is commented out with placeholders in code
+ */
 public class DisplayMessageActivity extends Activity {
 //    private RequestQueue requestQueue;
 
