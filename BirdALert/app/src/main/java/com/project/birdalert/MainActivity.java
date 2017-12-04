@@ -101,7 +101,7 @@ public class MainActivity extends Activity {
             try {
                 //Opening DGram socket
                 DatagramSocket socket = new DatagramSocket(port);
-                DatagramPacket packet = new DatagramPacket(new byte[PACKETSIZE],PACKETSIZE);    //packetsize is the buffer size
+                DatagramPacket packet = new DatagramPacket(new byte[PACKETSIZE],PACKETSIZE);
                 //the loop to manage receiving.
                 while(running) {
                     //logging if we are in a loop
