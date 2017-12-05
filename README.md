@@ -1,6 +1,6 @@
 # SYSC3010_m11
-Upload code to an arduino using Arduino IDE
-BIRDALERT
+   
+   BIRDALERT
 
    Arduino system that detects water status and protect rafts from birds dirts
 
@@ -17,6 +17,8 @@ BIRDALERT
 
    Functionality:
    Read data from all different sensors and send throught the serial port to an RPI
+   
+   Upload code to an arduino using Arduino IDE
 
     @author Mohamed Hozayen mohamedhozayen@sce.carleton.ca
     @version 27.11.2017
