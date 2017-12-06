@@ -1,7 +1,7 @@
 import json
 import socket
 from time import sleep
-UDP_IP = '172.20.10.6'  #ip of device that is receiving                                                                                         
+UDP_IP = 'localhost'  #ip of device that is receiving                                                                                         
 PORT = 5002 #port the information is being sent to
 def read_receiver():
      receiver_file=open("/home/pi/433Utils/RPi_utils/BirdALert.txt","r") #open the file containing the info from rf receiver
