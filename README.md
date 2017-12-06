@@ -4,6 +4,7 @@ To do this, Two python files are used. The first one is read_receiver_data.py wh
 
 To send to the App, run this file:
     https://github.com/MohamedHozayen/SYSC3010_m11/blob/osman/read_receiver_data.py
+    
 Before running it, there are some things to know
     1) The IP of the device receiving it must be inputted
     2) The Port being used to send and receive data must be the same for both receiver and sender
