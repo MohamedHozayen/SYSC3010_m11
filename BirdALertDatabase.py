@@ -1,6 +1,9 @@
 import mysql.connector
 from time import sleep
-
+user = 'root' #username of database
+host = 'localhost' #Where the database is stored
+database = 'BirdALert' #Name of database
+password = 'mohamed01' #password for database
 def read_receiver():
      receiver_file=open("/home/pi/433Utils/RPi_utils/BirdALert.txt","r") #open the file containing the info from rf receiver
      receiver_string = receiver_file.read() #read file
@@ -36,7 +39,7 @@ def insert_into_db(temp, flowSpeed, flowML, Sensed, date):
     flowMili = "'" + flowML + "'"
     birdSensed = "'" + Sensed+ "'"
     stringDate = "'" + date+ "'"
-    cnx = mysql.connector.connect(user='root', password='mohamed01',host='localhost',database = 'BirdALert')#establish a connection to the database
+    cnx = mysql.connector.connect(user, password,host,database)#establish a connection to the database
     curs = cnx.cursor() #create cursor for executing sql statements
     try:
         curs.execute("INSERT INTO metrics VALUES (%s,%s,%s,%s,%s)" % (temperature,fSpeed,flowMili,birdSensed,stringDate)) #insert string values into the table called metrics
