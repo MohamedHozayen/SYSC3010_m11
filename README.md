@@ -2,7 +2,7 @@
 BIRD-A-LERT Android App
 
 The app was made to work in conjuction with Bird-A-Lert project.
-Its purpose is to receive JSON string with measurements from the server, parse it and display values in UI
+Its purpose is to constantly receive JSON string with measurements from the server over UDP, parse it and display values in UI in real time.
 
 
 MainActivity.java class is the main class in this application. Metrics.java is used to parse received values of measurements into fields of this class.
