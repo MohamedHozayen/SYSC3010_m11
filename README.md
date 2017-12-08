@@ -13,7 +13,7 @@ Just open the project folder and run the app.
 The UI was made to fit Google Pixel smartphone and was tested on this device as well as in Genymotion emulator.
 
 Libraries used:
-Gson
+Gson,
 Volley (for DisplayMessageActivity)
 
 Author: Vadim Yastrebov
